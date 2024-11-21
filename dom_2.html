@@ -7,23 +7,95 @@
 
 </head>
 <body>
+    <div id="tablefrombody">
+
+    </div>
    
     <script>
-        let a=document.createElement("div")
-
-       
-        a.innerText="sudher"
-        console.log(a)
-        document.body.appendChild(a)
-        a.style.color="blue"
-
-
-        let b=document.createElement("p")
-        a.appendChild(b)
-        b.innertext="vishnu"
-        document.body.appendChild(b)
-        console.log(b)
         
+ const object = [
+            {name1:"vish", id: 1, name: "Vishnu", batch: "22r", course: "Full Stack", mockcleared:true }, 
+            {name1:"raj", id: 2, name: "vinay", batch: "22r", course: "Full Stack", mockcleared:true  }, 
+            {name1:"vij", id: 3, name: "Vijay", batch: "22r", course: "Full Stack", mockcleared :true  }, 
+            {name1:"shi", id: 4, name: "shirisha", batch: "22r", course: "Full Stack", mockcleared:false },
+            {name1:"     "   , id: 5, name: "Gouri", batch: "22r", course: "Full Stack", mockcleared:true  },
+        ];
+
+const tablecontainer = document.createElement("table")
+const tbody = document.createElement("tbody")
+const thead =document.createElement("thead")
+const tRow =document.createElement("tr")
+const tablebody=document.getElementById('tablefrombody')
+console.log(tablebody)
+tablecontainer.style.bordercollapse="collapse"
+tablecontainer.style.width="100%"
+
+
+
+const Header=[];
+for ( key in object[0]) {
+    Header.push(key)
+    }
+    for ( ele of Header) {
+        const th = document.createElement("th")
+        th.textContent=ele[0].toUpperCase() + ele.slice(1)
+        
+        th.style.padding="10px"
+        th.style.border="2px solid black"
+
+
+
+        tRow.appendChild(th)
+    }
+    for(objs of object){
+            const tableDataRows = document.createElement("tr")
+            for(key in objs){
+                const td = document.createElement("td")
+                if(key === "name1" && objs[key].trim() === "" ){
+                    td.textContent="----";
+                }
+                else if(key=="mockcleared"){
+                    td.textContent=objs[key]? "mock-cleared": "mock-notcleared"
+                }
+                else{ 
+                td.textContent = objs[key]
+                }
+                if(key=="mockcleared"){
+                    td.style.backgroundColor=objs[key]? "green": "gray"
+                }
+
+
+
+
+                td.style.padding="10px"
+                td.style.border="2px solid black"
+
+
+
+            tableDataRows.appendChild(td)
+            }
+           
+            tbody.appendChild(tableDataRows)
+        }
+    thead.appendChild(tRow);
+        tablecontainer.appendChild(thead)
+        tablecontainer.appendChild(tbody)
+
+    tablebody.appendChild(tablecontainer)
+
+      console.log(tablecontainer)  
+        
+        
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
