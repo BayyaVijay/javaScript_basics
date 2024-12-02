@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        #myButton{
+            border: 2px solid black;
+            background-color: blue;
+            position: absolute;
+            top: 200px;
+            left: 300px;
+            cursor: pointer;
+        }
+     </style>
+</head>
+<body>
+    <div id="myButton">
+      <button> click me</button><br> 
+      <button> leave me</button> 
+    </div>
+
+
+
+
+    <script>
+        function attachEventHandler() {
+  let message = "Button clicked!";
+
+  document.getElementById("myButton").addEventListener("click", function () {
+    alert(message); // The callback retains access to `message`
+  });
+}
+attachEventHandler();
+
+    </script>
+</body>
+</html>
