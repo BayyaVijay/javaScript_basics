@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkShop</title>
+    <style>
+        .container{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced JavaScript Quiz</h1>
+        
+        <div id="start-screen">
+            <input type="text" id="name-input" placeholder="Enter your name"><br><br>
+            <button id="random-btn" style="background-color: orangered;">Random Name</button><br><br>
+            <button id="start-btn" class="btn" style="background-color: blue;">Start Quiz</button><br><br>
+            <button id="view-high-scores-btn" class="btn" style="background-color: blue;">View High Scores</button>
+        </div>
+        <!-- <div id="quiz-screen" style="display: block;">
+            <div id="timer">Time: 60</div>
+            <div id="progress">Question 1 of 5</div>
+            <div id="question"></div>
+            <div id="answers"></div>
+            <div id="result"></div>
+            <div id="navigation">
+                <button id="prev-btn" class="btn" style="display: none;">Previous</button>
+                <button id="save-next-btn" class="btn">Save & Next</button>
+            </div> -->
+    </div>
+
+
+<script>
+    const highScore = document.getElementById("view-high-scores-btn")
+    const input = document.getElementById("input-btn")
+    const starbtn = document.getElementById("start-btn")
+    const randombtn = document.getElementById("random-btn")
+
+     const name = ["vamshi","vijay",]
+    let message = "please enter the name!!"
+ starbtn.addEventListener("click",function () {
+    alert(message); 
+  });
+       starbtn.addEventListener("click",()=>{
+        if(input==name){
+    window.location.href ="http://127.0.0.1:5500/workshop2.html"
+}
+else{
+    window.location.href ="http://127.0.0.1:5500/workshop1.html"
+}
+})
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
